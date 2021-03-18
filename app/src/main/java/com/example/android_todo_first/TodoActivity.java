@@ -61,7 +61,13 @@ public class TodoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // mTodoIndex += 1;
                 //correct way for resolvinf indexoutofbound exception
-                mTodoIndex = (mTodoIndex - 1);
+                if(mTodoIndex>0){
+                    mTodoIndex -=1;
+                }
+                else{
+                    mTodoIndex = 4;
+                }
+
                 TodoTextView.setText(mTodos[mTodoIndex]);
             }
         });
